@@ -1,0 +1,276 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+    min-height:100vh;
+}
+
+/* HEADER */
+
+header{
+    background:#000;
+    color:white;
+    padding:20px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:4px solid #ff0000;
+}
+
+header h2{
+    font-size:2rem;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+/* MENU */
+
+nav{
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    text-transform:uppercase;
+    padding:10px 15px;
+    transition:0.3s ease;
+    border-radius:8px; /* Curva leve nos links */
+}
+
+nav a:hover{
+    color:#ff0000;
+    background:rgba(255,255,255,0.1);
+    transform:translateY(-2px);
+}
+
+/* CONTAINER */
+
+.container{
+    max-width:1200px;
+    margin:30px auto;
+    padding:20px;
+}
+
+.container h1{
+    margin-bottom:10px;
+}
+
+.container p{
+    margin-bottom:15px;
+}
+
+/* BANNER */
+
+.banner-principal{
+    width:100%;
+    height:500px;
+    object-fit:cover;
+    border-radius:16px; /* Curvas mais arredondadas */
+    margin-top:20px;
+    box-shadow:0 8px 24px rgba(0,0,0,0.18); /* Sombra mais destacada */
+}
+
+/* BOTÕES */
+
+.btn{
+    display:inline-block;
+    background:#222;
+    color:white;
+    padding:12px 20px;
+    border:none;
+    border-radius:10px; /* Curvas mais suaves nos botões */
+    cursor:pointer;
+    text-decoration:none;
+    transition:0.3s;
+    margin-top:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.15); /* Sombra leve no botão */
+}
+
+.btn:hover{
+    background:#ff0000;
+    transform:scale(1.05);
+    box-shadow:0 6px 15px rgba(255,0,0,0.3); /* Sombra brilhante no hover */
+}
+
+/* CONTADOR */
+
+.contador-box{
+    margin-top:30px;
+    padding:20px;
+    background:white;
+    border-radius:16px; /* Curvas mais arredondadas */
+    box-shadow:0 10px 25px rgba(0,0,0,0.1); /* Sombra mais marcante */
+    width:250px;
+}
+
+#contador{
+    font-size:2rem;
+    font-weight:bold;
+    color:#ff0000;
+}
+
+/* ATRAÇÕES */
+
+.cards-atracoes{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px; /* Espaço ligeiramente maior entre os cards */
+    margin-top:20px;
+}
+
+.card{
+    background:white;
+    border-radius:16px; /* Curvas bem arredondadas nos cards das atrações */
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08); /* Sombra elegante e suave */
+    transition:0.3s ease;
+}
+
+.card:hover{
+    transform:translateY(-8px); /* Flutua um pouco mais ao passar o mouse */
+    box-shadow:0 15px 30px rgba(0,0,0,0.15); /* Sombra expande no hover */
+}
+
+.card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.card-body{
+    padding:20px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.extra{
+    display:none;
+    margin-top:10px;
+}
+
+/* TABELA */
+
+.tabela-dados{
+    width:100%;
+    border-collapse:separate; /* Permite que o border-radius funcione na tabela */
+    border-spacing: 0;
+    background:white;
+    margin-top:20px;
+    border-radius:16px; /* Curvas arredondadas na tabela */
+    overflow:hidden;
+    box-shadow:0 8px 25px rgba(0,0,0,0.08); /* Sombra na tabela */
+}
+
+.tabela-dados th{
+    background:#222;
+    color:white;
+    padding:15px;
+}
+
+.tabela-dados td{
+    padding:15px;
+    border-bottom:1px solid #eee; /* Linhas mais suaves */
+}
+
+.tabela-dados tr:last-child td {
+    border-bottom: none; /* Remove a linha do último item para não quebrar a curva */
+}
+
+.tabela-dados tr:nth-child(even){
+    background:#f2f2f2;
+}
+
+/* FORMULÁRIO */
+
+form{
+    background:white;
+    padding:25px;
+    border-radius:16px; /* Curvas arredondadas no formulário de cadastro */
+    box-shadow:0 10px 30px rgba(0,0,0,0.1); /* Sombra marcante de profundidade */
+}
+
+label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+
+.form-control{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px; /* Inputs ligeiramente arredondados */
+    transition: 0.2s;
+}
+
+.form-control:focus{
+    outline:none;
+    border-color:#ff0000;
+    box-shadow: 0 0 8px rgba(255,0,0,0.2); /* Brilho de foco no input */
+}
+
+#mensagem{
+    margin-top:20px;
+    color:green;
+    font-weight:bold;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+    background:#000;
+    color:white;
+    border-top:4px solid #ff0000;
+}
+
+/* RESPONSIVIDADE */
+
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+        text-align:center;
+        gap:20px;
+    }
+
+    nav{
+        flex-direction:column;
+        width:100%;
+    }
+
+    nav a{
+        width:100%;
+        text-align:center;
+    }
+
+    .banner-principal{
+        height:250px;
+    }
+
+    .contador-box{
+        width:100%;
+    }
+
+    .cards-atracoes{
+        grid-template-columns:1fr;
+    }
+
+    .tabela-dados{
+        display:block;
+        overflow-x:auto;
+    }
+}
