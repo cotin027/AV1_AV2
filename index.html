@@ -3,47 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal Geek</title>
+    <title>Portal Geek | Geek Universe 2026</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body>
-
-<header class="header-sistema">
-    <h2>Portal Geek</h2>
-    <nav class="nav-menu">
-        <a href="index.html" class="btn">Início</a>
-        <a href="atracoes.html" class="btn">Atrações</a>
-        <a href="cronograma.html" class="btn">Cronograma</a>
-        <a href="cadastro.html" class="btn">Pré-Cadastro</a>
-    </nav>
+<body > <header class="header-sistema">
+    <div class="header-container">
+        <h2><i class="fa-solid fa-gamepad"></i> Portal Geek</h2>
+        <nav class="nav-menu">
+            <a href="index.html" class="active"><i class="fa-solid fa-house"></i> Início</a>
+            <a href="atracoes.html"><i class="fa-solid fa-mask"></i> Atrações</a>
+            <a href="cronograma.html"><i class="fa-solid fa-calendar-days"></i> Cronograma</a>
+            <a href="cadastro.html"><i class="fa-solid fa-user-plus"></i> Pré-Cadastro</a>
+        </nav>
+        <button id="btn-tema" onclick="alternarTema()" class="btn-tema">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+    </div>
 </header>
 
 <main class="container">
-    <h1>Geek Universe 2026</h1>
-    <p>O maior evento Geek do Brasil.</p>
+    <section class="hero-section">
+        <h1>Geek Universe 2026</h1>
+        <p class="subtitulo">O maior evento Geek do Brasil.</p>
 
-    <img src="img/banner.jpg" class="banner-principal" alt="Banner Principal">
-    <br><br>
+        <div class="banner-container">
+            <img src="img/banner.jpg" class="banner-principal" alt="Banner Principal Geek Universe">
+        </div>
 
-    <a href="cadastro.html" class="btn">Fazer Pré-Cadastro</a>
+        <a href="cadastro.html" class="btn">Fazer Pré-Cadastro</a>
+    </section>
 
-    <h2>Descrição do Evento</h2>
-    <p>Anime, Games, Cosplay, Tecnologia, Campeonatos e Convidados Especiais.</p>
+    <hr style="margin: 30px 0; border: 0; border-top: 1px solid rgba(255,0,0,0.2);">
 
-    <div class="contador-box">
-        <h3>Inscritos</h3>
+    <section class="info-section">
+        <h2>Descrição do Evento</h2>
+        <p>Prepare-se para viver três dias épicos! O Geek Universe reúne o melhor do universo da cultura pop em um só lugar: Arenas de Games, Concurso Cosplay, painéis de Tecnologia, Campeonatos de E-sports e Convidados Especiais internacionais.</p>
+    </section>
+
+    <section class="contador-box">
+        <h3><i class="fa-solid fa-users"></i> Inscritos</h3>
         <span id="contador">150</span>
-        <br><br>
+        <p>Garanta sua vaga nessa jornada!</p>
         <button class="btn" onclick="participar()">Participar</button>
-    </div>
+    </section>
 </main>
 
 <footer class="footer-sistema">
-    <p>Portal Geek © 2026</p>
+    <p>Portal Geek © 2026 | Desenvolvido para Avaliação SENAI</p>
+    <div class="redes-sociais">
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-discord"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+    </div>
 </footer>
 
-<script src="js/script.js"></script>
+<script src="Server/server.js"></script>
 </body>
 </html>

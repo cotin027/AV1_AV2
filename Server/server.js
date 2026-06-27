@@ -1,39 +1,77 @@
 let inscritos = 150;
 
+/* =========================
+   FUNCIONALIDADE 3 - CONTADOR
+========================= */
 function participar() {
+    inscritos++;
 
-inscritos++;
+    const contador = document.getElementById("contador");
 
-document.getElementById("contador").innerText =
-inscritos;
-
+    if (contador) {
+        contador.innerText = inscritos;
+    }
 }
 
-function mostrar(botao){
+/* =========================
+   FUNCIONALIDADE 1 - VER MAIS / VER MENOS
+========================= */
+function alternarInfo(id, botao) {
+    const info = document.getElementById("info-extra-" + id);
 
-let texto =
-botao.nextElementSibling;
+    if (!info) return;
 
-if(texto.style.display === "block"){
-texto.style.display = "none";
-}else{
-texto.style.display = "block";
+    if (info.style.display === "block") {
+        info.style.display = "none";
+        botao.innerText = "Ver mais";
+    } else {
+        info.style.display = "block";
+        botao.innerText = "Ver menos";
+    }
 }
 
+/* =========================
+   FUNCIONALIDADE 4 - TEMA
+========================= */
+function alternarTema() {
+    document.body.classList.toggle("tema-escuro");
 }
 
-const formulario =
-document.getElementById("formulario");
+/* =========================
+   FUNCIONALIDADE 2 - FORMULÁRIO
+========================= */
+document.addEventListener("DOMContentLoaded", function () {
+    const formulario = document.getElementById("formulario");
 
-if(formulario){
+    if (!formulario) return;
 
-formulario.addEventListener("submit", function(e){
+    formulario.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-e.preventDefault();
+        const nome = document.getElementById("nome")?.value.trim();
+        const email = document.getElementById("email")?.value.trim();
+        const cidade = document.getElementById("cidade")?.value.trim();
+        const mensagem = document.getElementById("mensagem");
 
-document.getElementById("mensagem").innerHTML =
-"Cadastro realizado com sucesso!";
+        if (!nome || !email || !cidade) {
+            mensagem.style.display = "block";
+            mensagem.style.color = "red";
+            mensagem.innerText = "Preencha todos os campos obrigatórios!";
+            return;
+        }
 
+        mensagem.style.display = "block";
+        mensagem.style.color = "green";
+        mensagem.innerText = "Cadastro realizado com sucesso!";
+
+        formulario.reset();
+
+        // 🔥 aumenta contador ao cadastrar também
+        inscritos++;
+
+        const contador = document.getElementById("contador");
+        if (contador) {
+            contador.innerText = inscritos;
+        }
+    });
 });
-
-}

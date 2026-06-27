@@ -3,66 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cronograma</title>
+    <title>Cronograma | Portal Geek</title>
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        /* Estilos rápidos para organizar as tabelas caso seu CSS ainda não tenha */
-        .subtitulo-evento {
-            margin-top: 40px;
-            color: #333;
-            border-bottom: 2px solid #ccc;
-            padding-bottom: 5px;
-        }
-        .tabela-dados {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-            margin-bottom: 20px;
-        }
-        .tabela-dados th, .tabela-dados td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
-        }
-        .tabela-dados th {
-            background-color: #333;
-            color: white;
-        }
-        .tabela-dados tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-
-<body>
-
-<header class="header-sistema">
-    <h2>Portal Geek</h2>
-    <nav class="nav-menu">
-        <a href="index.html" class="btn">Início</a>
-        <a href="atracoes.html" class="btn">Atrações</a>
-        <a href="cronograma.html" class="btn">Cronograma</a>
-        <a href="cadastro.html" class="btn">Pré-Cadastro</a>
-    </nav>
+<body > <header class="header-sistema">
+    <div class="header-container">
+        <h2><i class="fa-solid fa-gamepad"></i> Portal Geek</h2>
+        <nav class="nav-menu">
+            <a href="index.html"><i class="fa-solid fa-house"></i> Início</a>
+            <a href="atracoes.html"><i class="fa-solid fa-mask"></i> Atrações</a>
+            <a href="cronograma.html" class="active"><i class="fa-solid fa-calendar-days"></i> Cronograma</a>
+            <a href="cadastro.html"><i class="fa-solid fa-user-plus"></i> Pré-Cadastro</a>
+        </nav>
+        <button id="btn-tema" onclick="alternarTema()" class="btn-tema">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+    </div>
 </header>
 
 <main class="container">
 
-    <h1>Cronograma dos Eventos</h1>
+    <h1><i class="fa-regular fa-clock"></i> Cronograma dos Eventos</h1>
+    <p>Fique por dentro de todos os horários para não perder nenhuma das nossas atrações!</p>
 
-    <h2 class="subtitulo-evento">Campinas Anime Geek (05/02)</h2>
+    <h2 class="subtitulo-evento" style="margin-top: 30px; margin-bottom: 10px; color: #124997; font-family: 'Orbitron', sans-serif;">Campinas Anime Geek (05/02)</h2>
     <table class="tabela-dados">
         <thead>
             <tr>
-                <th>Horário</th>
-                <th>Atividade</th>
-                <th>Local</th>
+                <th><i class="fa-regular fa-hourglass-half"></i> Horário</th>
+                <th><i class="fa-solid fa-star"></i> Atividade</th>
+                <th><i class="fa-solid fa-location-dot"></i> Local</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>12:00</td>
-                <td>Abertura dos Portões e DJ Geek</td>
+                <td><strong>Abertura dos Portões e DJ Geek</strong></td>
                 <td>Palco Principal</td>
             </tr>
             <tr>
@@ -72,86 +52,173 @@
             </tr>
             <tr>
                 <td>16:00</td>
-                <td>Desfile e Competição Cosplay (Com Premiação)</td>
+                <td><strong>Concurso Cosplay</strong> (Desfile e Competição)</td>
                 <td>Palco Principal</td>
             </tr>
             <tr>
                 <td>18:30</td>
-                <td>Torneio de Arena de Jogos</td>
+                <td><strong>Arena Gamer</strong> (Abertura dos Torneios)</td>
                 <td>Espaço Arena Gamer</td>
             </tr>
         </tbody>
     </table>
 
-    <h2 class="subtitulo-evento">Festival Cultura Geek (17/09)</h2>
+    <h2 class="subtitulo-evento" style="margin-top: 40px; margin-bottom: 10px; color: #124997; font-family: 'Orbitron', sans-serif;">Festival Cultura Geek (17/09)</h2>
     <table class="tabela-dados">
         <thead>
             <tr>
-                <th>Horário</th>
-                <th>Atividade</th>
-                <th>Local</th>
+                <th><i class="fa-regular fa-hourglass-half"></i> Horário</th>
+                <th><i class="fa-solid fa-star"></i> Atividade</th>
+                <th><i class="fa-solid fa-location-dot"></i> Local</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>10:00</td>
-                <td>Início do Festival e Feira de Produtos Orientais</td>
+                <td><strong>Feira de Produtos Orientais e Workshops</strong></td>
                 <td>Praça da Liberdade</td>
             </tr>
             <tr>
                 <td>13:00</td>
-                <td>Apresentação de Dança Tradicional e J-Pop</td>
+                <td><strong>Concurso K-Pop</strong> (Apresentações Solo e Grupo)</td>
                 <td>Palco Cultural</td>
             </tr>
             <tr>
                 <td>15:30</td>
-                <td>Grande Concurso Cosplay (Premiação dos Melhores)</td>
+                <td>Grande Concurso Cosplay (Finais e Premiação)</td>
                 <td>Palco Principal</td>
             </tr>
             <tr>
                 <td>18:00</td>
-                <td>Painel com Convidados Especiais</td>
+                <td><strong>Painel com Dubladores</strong> (Sessão de Perguntas e Respostas)</td>
                 <td>Auditório Aberto</td>
             </tr>
         </tbody>
     </table>
 
-    <h2 class="subtitulo-evento">GeekExpo (14 e 15 de Maio)</h2>
+    <h2 class="subtitulo-evento" style="margin-top: 40px; margin-bottom: 10px; color: #124997; font-family: 'Orbitron', sans-serif;">GeekExpo (14 e 15 de Maio)</h2>
     <table class="tabela-dados">
         <thead>
             <tr>
-                <th>Horário</th>
-                <th>Atividade</th>
-                <th>Local</th>
+                <th><i class="fa-regular fa-hourglass-half"></i> Horário</th>
+                <th><i class="fa-solid fa-star"></i> Atividade</th>
+                <th><i class="fa-solid fa-location-dot"></i> Local</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>09:00</td>
-                <td>Abertura da Exposição de Artistas Independentes</td>
+                <td>Abertura do Espaço <strong>Artists' Alley</strong> (Ilustradores e Escritores)</td>
                 <td>Salão do Sebrae</td>
             </tr>
             <tr>
                 <td>11:00</td>
-                <td>Meet & Greet com Criadores de Conteúdo</td>
-                <td>Área de Convidados</td>
+                <td>Espaço <strong>Jogos de Tabuleiro</strong> (RPGs e Card Games Livres)</td>
+                <td>Área de Boardgames</td>
             </tr>
             <tr>
                 <td>14:30</td>
-                <td>Palestra Tech e Exposições Temáticas exclusivas</td>
+                <td>Painel Especial: Vozes da Nostalgia (Dublagem)</td>
                 <td>Sala 2</td>
             </tr>
             <tr>
                 <td>17:00</td>
-                <td>Encerramento Especial e Sorteios</td>
+                <td>Finais da Arena Gamer e Encerramento com Sorteios</td>
                 <td>Palco Principal</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2 class="subtitulo-evento" style="margin-top: 40px; margin-bottom: 10px; color: #124997; font-family: 'Orbitron', sans-serif;">City Arena Geek (19/07)</h2>
+    <table class="tabela-dados">
+        <thead>
+            <tr>
+                <th><i class="fa-regular fa-hourglass-half"></i> Horário</th>
+                <th><i class="fa-solid fa-star"></i> Atividade</th>
+                <th><i class="fa-solid fa-location-dot"></i> Local</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>11:00</td>
+                <td><strong>Abertura da Arena Gamer</strong> (Início das Inscrições)</td>
+                <td>City Arena</td>
+            </tr>
+            <tr>
+                <td>13:00</td>
+                <td>Aquecimento Free-to-Play e Ajustes Técnicos</td>
+                <td>Estações de Jogos</td>
+            </tr>
+            <tr>
+                <td>15:00</td>
+                <td>Fases Eliminatórias do Torneio de e-Sports</td>
+                <td>Palco de Jogos</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2 class="subtitulo-evento" style="margin-top: 40px; margin-bottom: 10px; color: #124997; font-family: 'Orbitron', sans-serif;">Contagem Geek (Parque Fernão Dias)</h2>
+    <table class="tabela-dados">
+        <thead>
+            <tr>
+                <th><i class="fa-regular fa-hourglass-half"></i> Horário</th>
+                <th><i class="fa-solid fa-star"></i> Atividade</th>
+                <th><i class="fa-solid fa-location-dot"></i> Local</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>13:30</td>
+                <td>Abertura das Inscrições presenciais para Cosplay e K-Pop</td>
+                <td>Parque Fernão Dias</td>
+            </tr>
+            <tr>
+                <td>15:00</td>
+                <td><strong>Painel com Dubladores: Especial Manolo Rey</strong></td>
+                <td>Palco Principal</td>
+            </tr>
+            <tr>
+                <td>17:00</td>
+                <td>Início das Competições de K-Pop e Desfile Cosplay</td>
+                <td>Palco Principal</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2 class="subtitulo-evento" style="margin-top: 40px; margin-bottom: 10px; color: #124997;font-family: 'Orbitron', sans-serif;">Festival Cultura Nerd (31 de Maio)</h2>
+    <table class="tabela-dados">
+        <thead>
+            <tr>
+                <th><i class="fa-regular fa-hourglass-half"></i> Horário</th>
+                <th><i class="fa-solid fa-star"></i> Atividade</th>
+                <th><i class="fa-solid fa-location-dot"></i> Local</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>14:30</td>
+                <td><strong>Dinâmicas no Palco</strong></td>
+                <td>Espaço Villa</td>
+            </tr>
+            <tr>
+                <td>15:00</td>
+                <td><strong>Torneio de Cubo Mágico</strong></td>
+                <td>Espaço Villa</td>
             </tr>
         </tbody>
     </table>
 
 </main>
 
-<script src="js/script.js"></script>
+<footer class="footer-sistema">
+    <p>Portal Geek © 2026 | Desenvolvido para Avaliação SENAI</p>
+    <div class="redes-sociais">
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-discord"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+</footer>
 
+<script src="Server/server.js"></script>
 </body>
 </html>
