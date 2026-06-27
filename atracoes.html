@@ -3,76 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atrações - Portal Geek</title>
+    <title>Atrações | Portal Geek</title>
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        .extra {
-            display: none;
-            margin-top: 10px;
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body>
-<!-- FRFREFERGERGTR -->
-<header class="header-sistema">
-    <h2>Portal Geek</h2>
-    <nav class="nav-menu">
-        <a href="index.html" class="btn">Início</a>
-        <a href="atracoes.html" class="btn">Atrações</a>
-        <a href="cronograma.html" class="btn">Cronograma</a>
-        <a href="cadastro.html" class="btn">Pré-Cadastro</a>
-    </nav>
+<body > <header class="header-sistema">
+    <div class="header-container">
+        <h2><i class="fa-solid fa-gamepad"></i> Portal Geek</h2>
+        <nav class="nav-menu">
+            <a href="index.html"><i class="fa-solid fa-house"></i> Início</a>
+            <a href="atracoes.html" class="active"><i class="fa-solid fa-mask"></i> Atrações</a>
+            <a href="cronograma.html"><i class="fa-solid fa-calendar-days"></i> Cronograma</a>
+            <a href="cadastro.html"><i class="fa-solid fa-user-plus"></i> Pré-Cadastro</a>
+        </nav>
+        <button id="btn-tema" onclick="alternarTema()" class="btn-tema">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+    </div>
 </header>
 
 <main class="container">
-    <h1>Atrações</h1>
+    <h1>Conheça as Atrações</h1>
+    <p>As melhores atividades e convidados do cenário geek mundial.</p>
 
     <div class="cards-atracoes">
-        <!-- Card 1 -->
+        
         <div class="card">
-            <img src="img/03c6eee12326fcd588a94a85a6c973f3.jpg" alt="Campinas Anime Geek">
+            <img src="img/images.jpg" alt="Concurso Cosplay">
             <div class="card-body">
-                <h3>Vem aí o Campinas Anime Geek! Se você curte a cultura pop, jogos e o universo otaku, já marca na agenda para não perder.<br><br>
-                📅 Quando: Dia 05/02, a partir das 12h<br>
-                📍 Onde: Unimart Shopping Campinas<br>
-                🎟️ Entrada: 1kg de alimento não perecível (Entrada Solidária)</h3>
-                
-                <button class="btn" onclick="mostrar(this)">Ver Mais</button>
-                <p class="extra">Competição com premiação.</p>
+                <h3>Concurso Cosplay</h3>
+                <p>Mostre sua criatividade e concorra a grandes prêmios no palco principal.</p>
+                <div id="info-extra-1" style="display: none; margin-top: 15px; font-weight: bold; border-left: 3px solid #ff0000; padding-left: 10px;">
+                    <p>Inscrições abertas até o primeiro dia do evento. Juízes internacionais confirmados!</p>
+                </div>
+                <button id="btn-atracao-1" class="btn" onclick="alternarInfo(1, this)">Ver mais</button>
             </div>
         </div>
 
-        <!-- Card 2 -->
         <div class="card">
-            <img src="img/festival-geek-1-1024x1449.jpeg" alt="Festival Cultura Geek">
+            <img src="img/arena_gamer.jpg" alt="Arena Gamer">
             <div class="card-body">
-                <h3>Prepara o teu cosplay e junta-te à maior celebração da cultura pop e oriental! Vem aí o Festival Cultura Geek, um evento incrível cheio de atrações, convidados especiais e muita diversão.<br><br>
-                📅 Quando: 17 de Setembro<br>
-                ⏰ Horário: Das 10h às 20h<br>
-                📍 Onde: Praça da Liberdade - SP (São Paulo)<br>
-                🎟️ Entrada: Gratuita!</h3>
-                
-                <button class="btn" onclick="mostrar(this)">Ver Mais</button>
-                <p class="extra">Premiação para os melhores.</p>
+                <h3>Arena Gamer</h3>
+                <p>Espaço para campeonatos de e-Sports e estações free-to-play.</p>
+                <div id="info-extra-2" style="display: none; margin-top: 15px; font-weight: bold; border-left: 3px solid #ff0000; padding-left: 10px;">
+                    <p>Torneios de Valorant, League of Legends e Fighting Games com premiações em dinheiro.</p>
+                </div>
+                <button id="btn-atracao-2" class="btn" onclick="alternarInfo(2, this)">Ver mais</button>
             </div>
         </div>
 
-        <!-- Card 3 -->
         <div class="card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYemPIn4kfE3V7wcF1pf3zHI-MlrZrCeCRMUS2nY4E-w&s=10" alt="WhatsApp-Image-2023-11-29-at-14.16.07">
+            <img src="img/dubladores.jpg" alt="Painel com Dubladores">
             <div class="card-body">
-                <h3>Conheça artistas, criadores de conteúdo e convidados especiais, participe de atrações exclusivas, explore exposições temáticas e mergulhe de vez no universo geek.<br><br>
-                📅 Quando: 14 e 15 de Maio<br>
-                📍 Onde: Centro de Negócios do Sebrae<br>
-                🎟️ Garanta seu pré-cadastro e não fique de fora!</h3>
-                
-                <button class="btn" onclick="mostrar(this)">Ver Mais</button>
-                <p class="extra">Artistas independentes.</p>
+                <h3>Painel com Dubladores</h3>
+                <p>Converse com as vozes dos seus personagens favoritos de animes e filmes.</p>
+                <div id="info-extra-3" style="display: none; margin-top: 15px; font-weight: bold; border-left: 3px solid #ff0000; padding-left: 10px;">
+                    <p>Sessão exclusiva de autógrafos e fotos após o encerramento do painel principal.</p>
+                </div>
+                <button id="btn-atracao-3" class="btn" onclick="alternarInfo(3, this)">Ver mais</button>
             </div>
         </div>
+
+        <div class="card">
+            <img src="img/CONCURSO-POP.jpg" alt="Concurso K-Pop">
+            <div class="card-body">
+                <h3>Concurso K-Pop</h3>
+                <p>Apresentações de dança solo e em grupo com muita energia.</p>
+                <div id="info-extra-4" style="display: none; margin-top: 15px; font-weight: bold; border-left: 3px solid #ff0000; padding-left: 10px;">
+                    <p>Haverá workshops gratuitos de coreografias coreanas durante as manhãs.</p>
+                </div>
+                <button id="btn-atracao-4" class="btn" onclick="alternarInfo(4, this)">Ver mais</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="img/TABULEIRO.jpg" alt="Jogos de Tabuleiro">
+            <div class="card-body">
+                <h3>Jogos de Tabuleiro</h3>
+                <p>Área dedicada a RPGs de mesa, card games e jogos modernos.</p>
+                <div id="info-extra-5" style="display: none; margin-top: 15px; font-weight: bold; border-left: 3px solid #ff0000; padding-left: 10px;">
+                    <p>Monitores disponíveis no local para ensinar regras de novos jogos para iniciantes.</p>
+                </div>
+                <button id="btn-atracao-5" class="btn" onclick="alternarInfo(5, this)">Ver mais</button>
+            </div>
+        </div>
+<div class="card">
+    <img src="img/PROGAMACAO.jpg" alt="Programação - Festival Cultura Nerd">
+    <div class="card-body">
+        <h3>Programação - Festival Cultura Nerd</h3>
+        <p>Confira as atrações da 2ª Edição do evento que acontece no dia 31 de Maio no Espaço Villa.</p>
+        <div id="info-extra-7" style="display: none; margin-top: 15px; font-weight: bold; border-left: 3px solid #ff0000; padding-left: 10px;">
+            <p>⏱️ 14h30 - Dinâmicas no Palco</p>
+            <p>🎲 15h00 - Torneio de Cubo Mágico</p>
+            <p style="color: #ff0000; margin-top: 10px;">🎟️ Evento Gratuito!</p>
+        </div>
+        <button id="btn-atracao-7" class="btn" onclick="alternarInfo(7, this)">Ver mais</button>
+    </div>
+</div>
+
     </div>
 </main>
 
-<script src="js/script.js"></script>
+<footer class="footer-sistema">
+    <p>Portal Geek © 2026 | Desenvolvido para Avaliação SENAI</p>
+    <div class="redes-sociais">
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-discord"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+</footer>
+
+<script src="Server/server.js"></script>
 </body>
 </html>

@@ -1,276 +1,294 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+/* =====================
+   RESET
+===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
 
-body{
-    background:#f5f5f5;
-    min-height:100vh;
+/* =====================
+   BODY / TEMAS
+===================== */
+body {
+    background: #ffffff;
+    color: #000000;
+    min-height: 100vh;
 }
 
-/* HEADER */
-
-header{
-    background:#000;
-    color:white;
-    padding:20px 40px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    border-bottom:4px solid #ff0000;
+body.tema-escuro {
+    background: #121214;
+    color: #ffffff;
 }
 
-header h2{
-    font-size:2rem;
-    font-weight:bold;
-    letter-spacing:1px;
+/* =====================
+   LAYOUT PRINCIPAL
+===================== */
+html, body {
+    height: 100%;
 }
 
-/* MENU */
-
-nav{
-    display:flex;
-    gap:25px;
+body {
+    display: flex;
+    flex-direction: column;
 }
 
-nav a{
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
-    text-transform:uppercase;
-    padding:10px 15px;
-    transition:0.3s ease;
-    border-radius:8px; /* Curva leve nos links */
+main {
+    flex: 1;
 }
 
-nav a:hover{
-    color:#ff0000;
-    background:rgba(255,255,255,0.1);
-    transform:translateY(-2px);
+/* =====================
+   HEADER
+===================== */
+header {
+    background: #124997;
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid #0022ff;
 }
 
-/* CONTAINER */
-
-.container{
-    max-width:1200px;
-    margin:30px auto;
-    padding:20px;
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.container h1{
-    margin-bottom:10px;
+nav {
+    display: flex;
+    gap: 25px;
 }
 
-.container p{
-    margin-bottom:15px;
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    border-radius: 8px;
 }
 
-/* BANNER */
-
-.banner-principal{
-    width:100%;
-    height:500px;
-    object-fit:cover;
-    border-radius:16px; /* Curvas mais arredondadas */
-    margin-top:20px;
-    box-shadow:0 8px 24px rgba(0,0,0,0.18); /* Sombra mais destacada */
+nav a:hover,
+nav a.active {
+    background: rgba(255,255,255,0.1);
 }
 
-/* BOTÕES */
-
-.btn{
-    display:inline-block;
-    background:#222;
-    color:white;
-    padding:12px 20px;
-    border:none;
-    border-radius:10px; /* Curvas mais suaves nos botões */
-    cursor:pointer;
-    text-decoration:none;
-    transition:0.3s;
-    margin-top:10px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.15); /* Sombra leve no botão */
+/* =====================
+   BOTÕES
+===================== */
+.btn {
+    display: inline-block;
+    background: #124997;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.btn:hover{
-    background:#ff0000;
-    transform:scale(1.05);
-    box-shadow:0 6px 15px rgba(255,0,0,0.3); /* Sombra brilhante no hover */
+.btn:hover {
+    background: #0022ff;
+    transform: scale(1.05);
 }
 
-/* CONTADOR */
-
-.contador-box{
-    margin-top:30px;
-    padding:20px;
-    background:white;
-    border-radius:16px; /* Curvas mais arredondadas */
-    box-shadow:0 10px 25px rgba(0,0,0,0.1); /* Sombra mais marcante */
-    width:250px;
+/* =====================
+   CONTAINER
+===================== */
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
 }
 
-#contador{
-    font-size:2rem;
-    font-weight:bold;
-    color:#ff0000;
+/* =====================
+   BANNER (IMAGEM CORRIGIDA)
+===================== */
+.banner-principal {
+    width: 100%;
+    max-width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-top: 20px;
 }
 
-/* ATRAÇÕES */
-
-.cards-atracoes{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:25px; /* Espaço ligeiramente maior entre os cards */
-    margin-top:20px;
+/* =====================
+   CONTADOR
+===================== */
+.contador-box {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 16px;
+    background: white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
-.card{
-    background:white;
-    border-radius:16px; /* Curvas bem arredondadas nos cards das atrações */
-    overflow:hidden;
-    box-shadow:0 8px 20px rgba(0,0,0,0.08); /* Sombra elegante e suave */
-    transition:0.3s ease;
+body.tema-escuro .contador-box {
+    background: #202024;
 }
 
-.card:hover{
-    transform:translateY(-8px); /* Flutua um pouco mais ao passar o mouse */
-    box-shadow:0 15px 30px rgba(0,0,0,0.15); /* Sombra expande no hover */
+#contador {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #0022ff;
 }
 
-.card img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
+/* =====================
+   CARDS
+===================== */
+.cards-atracoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
 }
 
-.card-body{
-    padding:20px;
+.card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
-.card h3{
-    margin-bottom:10px;
+body.tema-escuro .card {
+    background: #202024;
 }
 
-.extra{
-    display:none;
-    margin-top:10px;
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
 }
 
-/* TABELA */
-
-.tabela-dados{
-    width:100%;
-    border-collapse:separate; /* Permite que o border-radius funcione na tabela */
-    border-spacing: 0;
-    background:white;
-    margin-top:20px;
-    border-radius:16px; /* Curvas arredondadas na tabela */
-    overflow:hidden;
-    box-shadow:0 8px 25px rgba(0,0,0,0.08); /* Sombra na tabela */
+.card-body {
+    padding: 15px;
 }
 
-.tabela-dados th{
-    background:#222;
-    color:white;
-    padding:15px;
+/* =====================
+   TABELA
+===================== */
+.tabela-dados {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
 }
 
-.tabela-dados td{
-    padding:15px;
-    border-bottom:1px solid #eee; /* Linhas mais suaves */
+body.tema-escuro .tabela-dados {
+    background: #202024;
 }
 
-.tabela-dados tr:last-child td {
-    border-bottom: none; /* Remove a linha do último item para não quebrar a curva */
+.tabela-dados th {
+    background: #124997;
+    color: white;
+    padding: 12px;
 }
 
-.tabela-dados tr:nth-child(even){
-    background:#f2f2f2;
+.tabela-dados td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
 }
 
-/* FORMULÁRIO */
-
-form{
-    background:white;
-    padding:25px;
-    border-radius:16px; /* Curvas arredondadas no formulário de cadastro */
-    box-shadow:0 10px 30px rgba(0,0,0,0.1); /* Sombra marcante de profundidade */
+body.tema-escuro .tabela-dados td {
+    border-bottom: 1px solid #333;
 }
 
-label{
-    display:block;
-    margin-top:15px;
-    margin-bottom:5px;
-    font-weight:bold;
+/* =====================
+   FORMULÁRIO
+===================== */
+form {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 16px;
 }
 
-.form-control{
-    width:100%;
-    padding:12px;
-    border:1px solid #ccc;
-    border-radius:8px; /* Inputs ligeiramente arredondados */
-    transition: 0.2s;
+body.tema-escuro form {
+    background: #202024;
 }
 
-.form-control:focus{
-    outline:none;
-    border-color:#ff0000;
-    box-shadow: 0 0 8px rgba(255,0,0,0.2); /* Brilho de foco no input */
+.form-control {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background: transparent;
+    color: inherit;
 }
 
-#mensagem{
-    margin-top:20px;
-    color:green;
-    font-weight:bold;
+/* =====================
+   MENSAGEM
+===================== */
+#mensagem {
+    margin-top: 15px;
+    color: green;
+    font-weight: bold;
 }
 
-/* FOOTER */
-
-footer{
-    text-align:center;
-    padding:20px;
-    margin-top:40px;
-    background:#000;
-    color:white;
-    border-top:4px solid #ff0000;
+/* =====================
+   FOOTER (CORRIGIDO)
+===================== */
+footer {
+    display: block;
+    width: 100%;
+    background: #124997;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
 }
 
-/* RESPONSIVIDADE */
+.redes-sociais {
+    margin-top: 10px;
+}
 
-@media(max-width:768px){
+.redes-sociais a {
+    color: white;
+    margin: 0 10px;
+    font-size: 18px;
+    text-decoration: none;
+}
 
-    header{
-        flex-direction:column;
-        text-align:center;
-        gap:20px;
+/* =====================
+   RESPONSIVO
+===================== */
+@media (max-width: 768px) {
+
+    header {
+        padding: 20px;
     }
 
-    nav{
-        flex-direction:column;
-        width:100%;
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
     }
 
-    nav a{
-        width:100%;
-        text-align:center;
+    nav {
+        flex-direction: column;
+        width: 100%;
     }
 
-    .banner-principal{
-        height:250px;
+    nav a {
+        width: 100%;
+        text-align: center;
     }
 
-    .contador-box{
-        width:100%;
+    .banner-principal {
+        height: 220px;
     }
 
-    .cards-atracoes{
-        grid-template-columns:1fr;
-    }
-
-    .tabela-dados{
-        display:block;
-        overflow-x:auto;
+    .cards-atracoes {
+        grid-template-columns: 1fr;
     }
 }

@@ -1,152 +1,98 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pré-Cadastro</title>
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        .container-cadastro {
-            max-width: 500px;
-            margin: 40px auto;
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            font-family: Arial, sans-serif;
-        }
-        .container-cadastro h1 {
-            color: #111;
-            margin-bottom: 20px;
-            font-size: 24px;
-            text-align: center;
-        }
-        .btn-voltar {
-            display: inline-block;
-            margin-bottom: 20px;
-            color: #ff4757;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 14px;
-            transition: transform 0.2s;
-        }
-        .btn-voltar:hover {
-            transform: translateX(-3px);
-        }
-        .form-group {
-            margin-bottom: 18px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 6px;
-            color: #333;
-            font-weight: bold;
-            font-size: 14px;
-        }
-        .form-group input, .form-group select {
-            width: 100%;
-            padding: 10px;
-            border: 2px solid #ddd;
-            border-radius: 6px;
-            box-sizing: border-box;
-            font-size: 14px;
-            transition: border-color 0.3s;
-        }
-        .form-group input:focus, .form-group select:focus {
-            border-color: #111;
-            outline: none;
-        }
-        .btn-enviar {
-            width: 100%;
-            background-color: #111;
-            color: white;
-            border: none;
-            padding: 12px;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        .btn-enviar:hover {
-            background-color: #333;
-        }
-        #mensagem {
-            margin-top: 15px;
-            text-align: center;
-            font-weight: bold;
-            color: #2ed573;
-        }
-    </style>
-</head>
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pré cadastro | Portal Geek</title>
 
-<body>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    </head>
 
-<header class="header-sistema">
-    <h2>Portal Geek</h2>
-    <nav class="nav-menu">
-        <a href="index.html" class="btn">Início</a>
-        <a href="atracoes.html" class="btn">Atrações</a>
-        <a href="cronograma.html" class="btn">Cronograma</a>
-        <a href="cadastro.html" class="btn">Pré-Cadastro</a>
-    </nav>
-</header>
+    <!-- 🔥 CORREÇÃO IMPORTANTE -->
+    <body>
 
-<main class="container-cadastro">
-    <a href="index.html" class="btn-voltar">← Voltar para o Início</a>
+    <header class="header-sistema">
+        <div class="header-container">
+            <h2><i class="fa-solid fa-gamepad"></i> Portal Geek</h2>
 
-    <h1>Pré-Cadastro</h1>
+            <nav class="nav-menu">
+                <a href="index.html">Início</a>
+                <a href="atracoes.html">Atrações</a>
+                <a href="cronograma.html">Cronograma</a>
+                <a href="cadastro.html" class="active">Pré-Cadastro</a>
+            </nav>
 
-    <form id="formulario">
-        <!-- Nome -->
-        <div class="form-group">
+            <button id="btn-tema" onclick="alternarTema()" class="btn-tema">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <h1>Pré-Cadastro</h1>
+        <p>Inscreva-se para ficar por dentro das novidades do evento.</p>
+
+        <!-- ================= FORMULÁRIO ================= -->
+        <form id="formulario" onsubmit="validarFormulario(event)">
+
             <label for="nome">Nome:</label>
-            <input type="text" id="nome" required placeholder="Digite seu nome completo">
-        </div>
+            <input type="text" id="nome" class="form-control" required>
 
-        <!-- E-mail -->
-        <div class="form-group">
             <label for="email">E-mail:</label>
-            <input type="email" id="email" required placeholder="seuemail@exemplo.com">
-        </div>
+            <input type="email" id="email" class="form-control" required>
 
-        <!-- Cidade -->
-        <div class="form-group">
             <label for="cidade">Cidade:</label>
-            <input type="text" id="cidade" required placeholder="Digite sua cidade">
-        </div>
+            <input type="text" id="cidade" class="form-control" required>
 
-        <!-- Faixa Etária -->
-        <div class="form-group">
             <label for="faixa-etaria">Faixa Etária:</label>
-            <select id="faixa-etaria" required>
-                <option value="">Selecione sua faixa etária...</option>
-                <option value="infantil">Até 12 anos</option>
-                <option value="jovem">13 a 17 anos</option>
-                <option value="adulto-jovem">18 a 25 anos</option>
-                <option value="adulto">26 a 40 anos</option>
-                <option value="veterano">Mais de 40 anos</option>
+            <select id="faixa-etaria" class="form-control" required>
+                <option value="">Selecione...</option>
+                <option>Até 12 anos</option>
+                <option>13 a 17 anos</option>
+                <option>18 a 25 anos</option>
+                <option>26 a 40 anos</option>
+                <option>40+ anos</option>
             </select>
-        </div>
 
-        <!-- Evento de Interesse -->
-        <div class="form-group">
             <label for="evento">Evento de Interesse:</label>
-            <select id="evento" required>
+            <select id="evento" class="form-control" required>
                 <option value="">Selecione um evento...</option>
-                <option value="campinas">Campinas Anime Geek (05/02)</option>
-                <option value="liberdade">Festival Cultura Geek (17/09)</option>
-                <option value="expo">GeekExpo (14 e 15 de Maio)</option>
+                <option>Campinas Anime Geek (05/02)</option>
+                <option>Festival Cultura Geek (17/09)</option>
+                <option>GeekExpo (14 e 15 de Maio)</option>
+                <option>City Arena Geek (19/07)</option>
+                <option>Contagem Geek (Parque Fernão Dias)</option>
+                <option>Festival Cultura Nerd (31 de Maio)</option>
             </select>
+
+            <button type="submit" class="btn" style="width: 100%;">
+                Cadastrar
+            </button>
+
+            <p id="mensagem"></p>
+
+        </form>
+
+    
+
+    </main>
+
+    <footer class="footer-sistema">
+        <p>Portal Geek © 2026 | Desenvolvido para Avaliação SENAI</p>
+
+        <div class="redes-sociais">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-discord"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
         </div>
+    </footer>
 
-        <button type="submit" class="btn-enviar">Cadastrar</button>
-    </form>
+    <script src="Server/server.js"></script>
 
-    <p id="mensagem"></p>
-</main>
-
-<script src="js/script.js"></script>
-
-</body>
-</html>
+    </body>
+    </html>
